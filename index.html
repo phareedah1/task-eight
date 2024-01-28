@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calc.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div><input type="text" id="display" placeholder="0" readonly>
+        </div>
+        <div class="calculator">
+            <div class="firstrow">
+                <button onclick="clearDisplay()" class="circle">AC</button>
+                <button onclick="addToDisplay()" class="circle">+/-</button>
+                <button onclick="addToDisplay('%')" class="circle">%</button>
+                <button onclick="addToDisplay('/')" class="circle orange">/</button>
+            </div>
+
+            <div class="firstrow">
+                <button onclick="addToDisplay(7)" class="circle grey">7</button>
+                <button onclick="addToDisplay(8)" class="circle grey">8</button>
+                <button onclick="addToDisplay(9)" class="circle grey">9</button>
+                <button onclick="addToDisplay('*')" class="circle orange">X</button>
+            </div>
+
+            <div class="firstrow">
+                <button onclick="addToDisplay(4)" class="circle grey">4</button>
+                <button onclick="addToDisplay(5)" class="circle grey">5</button>
+                <button onclick="addToDisplay(6)" class="circle grey">6</button>
+                <button onclick="addToDisplay('-')" class="circle orange">-</button>
+            </div>
+
+            <div class="firstrow">
+                <button onclick="addToDisplay(1)" class="circle grey">1</button>
+                <button onclick="addToDisplay(2)" class="circle grey">2</button>
+                <button onclick="addToDisplay(3)" class="circle grey">3</button>
+                <button onclick="addToDisplay('+')" class="circle orange">+</button>
+            </div>
+
+            <div class="firstrow">
+                <button onclick="addToDisplay(0)" class="circle grey twice">0</button>
+                <button onclick="addToDisplay('.')" class="circle grey">.</button>
+                <button onclick="calculate()" class="circle orange ">=</button>
+            </div>
+
+
+        </div>  
+      </div>    
+    <script>
+        function addToDisplay(value) {
+        document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+        document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+        const displayValue = document.getElementById('display').value;
+        const result = eval(displayValue);
+        document.getElementById('display').value = result;
+        }
+    </script>
+</body>
+</html>
